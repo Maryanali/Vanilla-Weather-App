@@ -1,13 +1,44 @@
 let apiKey = "ac254995f1530b05133bdf3b89d170a4";
-let city= "Sydney";
+//let city= "Sydney";
+let formValue = document.querySelector("#search-form"); //we got the form where they write the city
+let inputValue = document.querySelector("search-input");
+let city = inputValue.value;
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 //let lat =position.coords.latitude;
 //let long =position.coords.longitude;
 //let apiCood= `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude={part}&appid=ac254995f1530b05133bdf3b89d170a4`;
 //from the axios github, makes it easy to send HTTP requests 
 
+
+
+//function citySearch(event) {
+  //event.preventDefault();
+ // let formValue = document.querySelector("#search-form"); //we got the form where they write the city
+ // let inputValue = document.querySelector("search-input"); //now we got the actual input on the form
+  //let heading = document.querySelector("#city-search");
+  //let city = inputValue.value;
+
+//if the value of the input is there, then we can display it else do an alert
+ //if (inputValue.value){
+  //  city.innerHTML = `${inputValue.value}`; 
+// }else{
+  //   alert("Please write a city");
+ //}
+
+//we need to find the value of search.value and === to city from the result. 
+//}
+
+
+//i changed the value of h2 back to city!!! sorry lol
+
+
+
+//let form = document.querySelector("form");
+//form.addEventListener("submit", citySearch);
+
+
 function showTemp(response){
-    //console.log(response);
+    console.log(response);
     let temperatureElement =document.querySelector("#temperature");
     let temperature =Math.round(response.data.main.temp);
     temperatureElement.innerHTML= `${temperature} °C`;
@@ -24,7 +55,6 @@ function showTemperatureDescription(response){
     temperatureDescription.innerHTML =response.data.weather[0].description;
 
 }
-
 let h2 = document.querySelector("#city");
 h2.innerHTML = city; 
 
@@ -54,7 +84,31 @@ function showTemperature(response){
     }
 
     navigator.geolocation.getCurrentPosition(requirePosition);
-    
+/*  
+function citySearch(event) {
+  event.preventDefault();
+  let formValue = document.querySelector("#search-form"); //we got the form where they write the city
+  let inputValue = document.querySelector("search-input"); //now we got the actual input on the form
+  let heading = document.querySelector("#city-search");
+
+//if the value of the input is there, then we can display it else do an alert
+ if (inputValue.value){
+    city.innerHTML = `${inputValue.value}`; 
+ }else{
+     alert("Please write a city");
+ }
+
+//we need to find the value of search.value and === to city from the result. 
+}
+*/
+
+//i changed the value of h2 back to city!!! sorry lol
+
+
+
+//let form = document.querySelector("form");
+//form.addEventListener("submit", citySearch);
+
 
 
 
