@@ -1,3 +1,12 @@
 #temperature-description {
   text-transform: capitalize;
 }
+
+.weather-app {
+  max-width: 700px;
+  margin: 0 auto;
+  border: 1px solid grey;
+  margin: 35px auto;
+  padding: 40px;
+  border-radius: 35px;
+}
