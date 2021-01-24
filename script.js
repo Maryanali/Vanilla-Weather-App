@@ -75,7 +75,7 @@ function showTemperature(response){
     title.innerHTML= `The Temperature is ${currentTemperature}`;
 
 }
-    function requirePosition(position) {
+function requirePosition(position) {
         let latitude = position.coords.latitude;
         let longitude =position.coords.longitude;
         let apiKey = "ac254995f1530b05133bdf3b89d170a4";
