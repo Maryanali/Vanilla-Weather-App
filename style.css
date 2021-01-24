@@ -1,7 +1,39 @@
+* {
+  font-family: Arial, sans-serif;
+  color: black;
+}
+h1 {
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 200;
+  line-height: 30px;
+}
+
+h3 {
+  font-family: "Sacramento", cursive;
+  font-size: 25px;
+}
+
 #temperature-description {
   text-transform: capitalize;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  color: rgb(135, 135, 135);
+  font-size: 17px;
+  font-weight: 100;
+  margin: 0;
+  text-align: left;
+  line-height: 20px;
+  padding: 0;
+  margin-top: 5px;
+}
 .weather-app {
   max-width: 700px;
   margin: 0 auto;
@@ -9,4 +41,14 @@
   margin: 35px auto;
   padding: 40px;
   border-radius: 35px;
+}
+
+.weather-app-border {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#search-input {
+  margin: 0;
+  padding: 0;
 }

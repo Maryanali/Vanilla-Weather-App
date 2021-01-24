@@ -1,7 +1,7 @@
 let apiKey = "ac254995f1530b05133bdf3b89d170a4";
 //let city= "Sydney";
 let formValue = document.querySelector("#search-form"); //we got the form where they write the city
-let inputValue = document.querySelector("search-input");
+let inputValue = document.querySelector("search-input");s
 let city = inputValue.value;
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 //let lat =position.coords.latitude;
