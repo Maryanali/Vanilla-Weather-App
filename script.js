@@ -74,14 +74,14 @@ function showTemperature(response){
     let title =document.querySelector("h2");
     title.innerHTML= `The Temperature is ${currentTemperature}`;
 
-    }
+}
     function requirePosition(position) {
         let latitude = position.coords.latitude;
         let longitude =position.coords.longitude;
         let apiKey = "ac254995f1530b05133bdf3b89d170a4";
         let apiUrl= `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(showTemperature);
-    }
+}
 
     navigator.geolocation.getCurrentPosition(requirePosition);
 /*  

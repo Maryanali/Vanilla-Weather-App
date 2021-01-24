@@ -1,6 +1,5 @@
 * {
   font-family: Arial, sans-serif;
-  color: black;
 }
 h1 {
   font-family: "Sacramento", cursive;
@@ -8,11 +7,14 @@ h1 {
   font-size: 35px;
   font-weight: 200;
   line-height: 30px;
+  color: black;
 }
 
 h3 {
   font-family: "Sacramento", cursive;
-  font-size: 25px;
+  font-size: 30px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 #temperature-description {
@@ -51,4 +53,26 @@ li {
 #search-input {
   margin: 0;
   padding: 0;
+}
+
+.weather-app-spacing2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.weather-temperature img {
+  margin-right: 10px;
+  height: 60px;
+  width: 60px;
+}
+.weather-temperature strong {
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.units {
+  position: relative;
+  font-size: 15px;
+  top: -32px;
 }
