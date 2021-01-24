@@ -1,8 +1,5 @@
 let apiKey = "ac254995f1530b05133bdf3b89d170a4";
-//let city= "Sydney";
-let formValue = document.querySelector("#search-form"); //we got the form where they write the city
-let inputValue = document.querySelector("search-input");s
-let city = inputValue.value;
+let city= "Sydney";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 //let lat =position.coords.latitude;
 //let long =position.coords.longitude;
@@ -20,7 +17,7 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=me
 
 //if the value of the input is there, then we can display it else do an alert
  //if (inputValue.value){
-  //  city.innerHTML = `${inputValue.value}`; 
+  //  city.innerHTML = `${inputValue.value}`;  
 // }else{
   //   alert("Please write a city");
  //}
@@ -41,13 +38,18 @@ function showTemp(response){
     console.log(response);
     let temperatureElement =document.querySelector("#temperature");
     let temperature =Math.round(response.data.main.temp);
-    temperatureElement.innerHTML= `${temperature} °C`;
+    temperatureElement.innerHTML= `${temperature}`;
 } 
 
 function showHumidity(response){
     let temperatureHumidity =document.querySelector("#temperature-humidity");
     let humidity = Math.round(response.data.main.humidity);
-    temperatureHumidity.innerHTML= `${humidity}`;
+    temperatureHumidity.innerHTML= `Humidity ${humidity}`;
+}
+function showPressure(response){
+    let temperaturePressure =document.querySelector("#temperature-pressure");
+    let pressure = Math.round(response.data.main.pressure);
+    temperaturePressure.innerHTML= `Pressure ${pressure}`;
 }
 
 function showTemperatureDescription(response){
@@ -67,14 +69,22 @@ function showPosition(position){
 function getCurrentPosition(){
 navigator.geolocation.getCurrentPosition(showPosition);
 }
+//This is console logging the temperature of Birmingham but this should
+//be initiated by a click of a button
 
 function showTemperature(response){
     let currentTemperature = Math.round(response.data.main.temp);
-    console.log(currentTemperature);
-    let title =document.querySelector("h2");
+    let title =document.querySelector("h3");
     title.innerHTML= `The Temperature is ${currentTemperature}`;
 
 }
+
+
+
+
+
+
+
 function requirePosition(position) {
         let latitude = position.coords.latitude;
         let longitude =position.coords.longitude;
@@ -84,7 +94,7 @@ function requirePosition(position) {
 }
 
     navigator.geolocation.getCurrentPosition(requirePosition);
-/*  
+
 function citySearch(event) {
   event.preventDefault();
   let formValue = document.querySelector("#search-form"); //we got the form where they write the city
@@ -100,14 +110,19 @@ function citySearch(event) {
 
 //we need to find the value of search.value and === to city from the result. 
 }
-*/
+
+
+//Challenge 1- Get current date
+//so this one shows the full date and whenever you want to get something do now.getmonth
+
+
 
 //i changed the value of h2 back to city!!! sorry lol
 
 
 
-//let form = document.querySelector("form");
-//form.addEventListener("submit", citySearch);
+let form = document.querySelector("form");
+form.addEventListener("submit", citySearch);
 
 
 
@@ -115,8 +130,11 @@ function citySearch(event) {
 
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showHumidity);
+axios.get(`${apiUrl}&appid=${apiKey}`).then(showPressure);
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperatureDescription);
+axios.get(`${apiUrl}&appid=${apiKey}`).then(showTeperature);
 
 
 let button= document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
+
