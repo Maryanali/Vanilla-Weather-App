@@ -32,15 +32,39 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=me
 
 //let form = document.querySelector("form");
 //form.addEventListener("submit", citySearch);
+function formatDate(timestamp){
+//recieves the number of milliseconds since 1970   
+//calculates the date
+let date = new Date(timestamp);
+let hours = date.getHours();
+if (hours < 10){
+    hours = `0${hours}`;
+} 
+let minutes= date.getMinutes();
+if (minutes < 10){
+    minutes = `0${minutes}`;
+} 
+let days =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let day = days[date.getDay()];
+return `${day} ${hours}:${minutes}`;
 
-
+}
+function showDate(response){
+let dateElement = document.querySelector("#date");  
+dateElement.innerHTML= formatDate(response.data.dt * 1000);
+}
 function showTemp(response){
     console.log(response);
     let temperatureElement =document.querySelector("#temperature");
     let temperature =Math.round(response.data.main.temp);
     temperatureElement.innerHTML= `${temperature}`;
 } 
-
+function windSpeed(response){
+    console.log(response);
+    let windElement =document.querySelector("#wind");
+    let wind =Math.round(response.data.wind.speed);
+    windElement.innerHTML= `Wind ${wind}`;
+} 
 function showHumidity(response){
     let temperatureHumidity =document.querySelector("#temperature-humidity");
     let humidity = Math.round(response.data.main.humidity);
@@ -129,10 +153,13 @@ form.addEventListener("submit", citySearch);
 
 
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
+axios.get(`${apiUrl}&appid=${apiKey}`).then(showDate);
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showHumidity);
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showPressure);
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperatureDescription);
-axios.get(`${apiUrl}&appid=${apiKey}`).then(showTeperature);
+//axios.get(`${apiUrl}&appid=${apiKey}`).then(showTeperature);
+axios.get(`${apiUrl}&appid=${apiKey}`).then(windSpeed);
+axios.get(`${apiUrl}&appid=${apiKey}`).then(showDate);
 
 
 let button= document.querySelector("button");
