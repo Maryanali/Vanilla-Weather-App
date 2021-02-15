@@ -1,5 +1,5 @@
 let apiKey = "ac254995f1530b05133bdf3b89d170a4";
-let city= "Sydney";
+let city= "Barcelona";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 //let lat =position.coords.latitude;
 //let long =position.coords.longitude;
@@ -32,6 +32,13 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=me
 
 //let form = document.querySelector("form");
 //form.addEventListener("submit", citySearch);
+
+function temperatureIcon(response){
+let iconElement = document.querySelector("#icon");
+iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+
 function formatDate(timestamp){
 //recieves the number of milliseconds since 1970   
 //calculates the date
@@ -160,6 +167,7 @@ axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperatureDescription);
 //axios.get(`${apiUrl}&appid=${apiKey}`).then(showTeperature);
 axios.get(`${apiUrl}&appid=${apiKey}`).then(windSpeed);
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showDate);
+axios.get(`${apiUrl}&appid=${apiKey}`).then(temperatureIcon);
 
 
 let button= document.querySelector("button");
