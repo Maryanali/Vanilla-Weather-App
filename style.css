@@ -61,8 +61,7 @@ li::first-letter {
 }
 
 #search-input {
-  margin: 0;
-  padding: 0;
+  padding: 5px;
 }
 
 .weather-app-spacing2 {
@@ -92,4 +91,18 @@ li::first-letter {
 .btn {
   background-color: #66b9d5;
   border: #66b9d5;
+}
+
+.weather-temperature .active {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+
+.weather-temperature .active :hover {
+  text-decoration: none;
+}
+
+#f-link {
+  text-decoration: none;
 }

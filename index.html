@@ -21,15 +21,16 @@
         
         <h1 id="city">Today's Weather</h1>
 
-        <h3 id="location"> Location </h2>   
-        <div class="row-2">
-            <div class="col2-12">
-                <form id="search-form">
-                <label for="searchcity" class="search-city"></label>
-                <input type="text" id=search-input placeholder="Seach city here.." autofocus="on" auto-complete="off">
-                <button type="button" class="btn btn-light">Search</button>
-                <button type="button" class="btn btn-light" id="current-button">Current</button>
-                </form>
+        <h3 id="location"> Location </h2> 
+        <form id="search-form" class="mb-4">
+        <div class="row">
+            <div class="col-6">
+                <input type="search" id=search-input class="form-control" placeholder="Seach city here.." autofocus="on" auto-complete="off" > 
+            </div>
+            <div class="col-6">
+                <button type="submit" value="Search" class="btn btn-light">Search</button>
+                <button type="submit" value="Search" class="btn btn-light" id="current-button">Current</button>
+            </form>
             </div>
         </div>
     <div class="weather-app-spacing2">
@@ -49,20 +50,20 @@
                 <div class="clearfix weather-temperature">
                 <img src="" width="100" alt="Icon of current weather" alt="clear" class="float-left"
                 id="icon" />
-                   <strong class="temperature" id="temperature"> 12</strong> <small class ="units">°C | °F </small>
+                   <strong class="temperature" id="temperature"> 12</strong> <small class ="units"> <a href="#" id="c-link" class="active"> °C </a>| <a href="#" id="f-link"> °F </a></small>
             </div>
             </div>
-            <div class="col-3">
+            <div class="col-6">
                 <ul>
                     <li id= "temperature-pressure">
-                       
+                        Pressure:
                     </li>
                     <li id="temperature-humidity">
-                        
+                        Humidity:
                     </li>
 
                     <li> <span id="wind"></span>
-                        
+                         
                     </li>
                 </ul>
             </div>
