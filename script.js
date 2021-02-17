@@ -41,7 +41,7 @@ let pressure = Math.round(response.data.main.pressure);
 let temperatureDescription =document.querySelector("#temperature-description");
 let currentTemperature = Math.round(response.data.main.temp);
 //let title =document.querySelector("h3");
-let cityElement = document.querySelector("h3");
+let cityElement = document.querySelector("h2");
 
 celciusTemperature = response.data.main.temp;
 
