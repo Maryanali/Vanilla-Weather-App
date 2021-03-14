@@ -61,6 +61,7 @@ li::first-letter {
 .weather-app-border {
   max-width: 700px;
   margin: 0 auto;
+  text-align: center;
 }
 
 #search-input {
@@ -140,4 +141,8 @@ li::first-letter {
   height: auto;
   line-height: 15px;
   white-space: nowrap;
+}
+
+.container .small {
+  text-align: center;
 }
